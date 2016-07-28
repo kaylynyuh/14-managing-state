@@ -32,7 +32,8 @@
     );
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // ANSWERED: What does this method do?  What is it's execution path?
+  // This method takes an category name via context that is passed to it by routes.js, and passes that context into Article.findWhere. Article.findWhere returns an array of articles that match that category, and passes the array to articlesController.index for rendering.
   articlesController.loadByCategory = function(ctx, next) {
     var categoryData = function(articlesInCategory) {
       ctx.articles = articlesInCategory;
@@ -42,7 +43,8 @@
     Article.findWhere('category', ctx.params.categoryName, categoryData);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // ANSWERED: What does this method do?  What is it's execution path?
+  // This method checks to see if there are any article in the Articles.all array. If there are not, it gets all of the articles via Article.fetchAll. It passes the array of articles into articleData, which passes the array to articleController.index for rendering. 
   articlesController.loadAll = function(ctx, next) {
     var articleData = function(allArticles) {
       ctx.articles = Article.all;
