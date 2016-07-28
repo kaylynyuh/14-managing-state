@@ -8,7 +8,7 @@
   };
 
   // ANSWERED: What does this method do?  What is it's execution path?
-  // This method loads by the context id that is passed into it by routes.js. It passes the context into Article.findWhere, which return an array of objects matching the context id. It then passes that array to articleController.index for rendering.
+  // This method loads by the context id that is passed into it by routes.js. It passes the selector 'id' and the context into Article.findWhere, which returns an array of objects matching the context id. This method then passes that array to articleController.index for rendering, since that is the next function on routes.js.
   //
   articlesController.loadById = function(ctx, next) {
     var articleData = function(article) {
