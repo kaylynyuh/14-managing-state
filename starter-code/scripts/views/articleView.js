@@ -12,8 +12,8 @@
     return template(article);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
-  //On aricleView.populateFilters we are compiling the Handlebars template with an id of 'option-template'. By using .text() we are specifying to update the text within the template when this function runs to populate the author filter. To determine what we are populating the template with, were are using an array method on Article.allAuthors
+  // ANSWERED: What does this method do?  What is it's execution path?
+  //On aricleView.populateFilters we are compiling the Handlebars template with an id of 'option-template'. To determine what we are populating the template with, were are using an array method on Article.allAuthors to get the author name and put that value into the filter if does not already exist in the filter.
   articleView.populateFilters = function() {
     var options,
       template = Handlebars.compile($('#option-template').text());
