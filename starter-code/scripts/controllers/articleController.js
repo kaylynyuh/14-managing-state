@@ -7,7 +7,7 @@
     articleView.index(ctx.articles);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // ANSWERED: What does this method do?  What is it's execution path?
   // This method loads by the context id that is passed into it by routes.js. It passes the context into Article.findWhere, which return an array of objects matching the context id. It then passes that array to articleController.index for rendering.
   //
   articlesController.loadById = function(ctx, next) {

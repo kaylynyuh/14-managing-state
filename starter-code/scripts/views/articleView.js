@@ -117,7 +117,7 @@
     $('#article-json').val(JSON.stringify(article) + ',');
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // ANSWERED: What does this method do?  What is it's execution path?
   // This method takes in an array of articles and renders them on the page accordingly and populates the filters. It also truncates an article and provides a 'show more' link if an article is long enough.
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
