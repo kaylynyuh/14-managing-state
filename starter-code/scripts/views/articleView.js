@@ -37,7 +37,8 @@
     });
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // ANSWERED: What does this method do?  What is it's execution path?
+  // This method is a one-time event handler, that takes the value of the item that was selected in the filter dropdown, and replaces any spaces in the value  with + signs. It takes the id of the filter, and removes '-filter', then uses the id and the value to build a route that page.js can execute (that matches one of the routes on routes.js).
   articleView.handleFilters = function() {
     $('#filters').one('change', 'select', function() {
       var resource = this.id.replace('-filter', '');
