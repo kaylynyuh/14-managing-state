@@ -13,10 +13,10 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  //On aricleView.populateFilters we are compiling the Handlebars template with an id of 'option-template'. By using .text() we are specifying to update the text within the template when this function runs to populate the author filter. To determine what we are populating the template with, were are using an array method on Article.allAuthors
   articleView.populateFilters = function() {
     var options,
       template = Handlebars.compile($('#option-template').text());
-
     // Example of using model method with functional programming, synchronous approach:
     // This method is dependant on info being in the DOM. Only authors of shown articles are loaded.
     options = Article.allAuthors().map(function(author) { return template({val: author}); });
@@ -118,6 +118,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  // This method takes in an array of articles and renders them on the page accordingly and populates the filters. It also truncates an article and provides a 'show more' link if an article is long enough.
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
 
